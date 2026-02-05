@@ -1,0 +1,177 @@
+# Japanese translations for jinjautil.
+# Copyright (C) 2024
+# This file is distributed under the same license as the jinjautil package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jinjautil\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja_JP\n"
+"Language-Team: Japanese\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:12
+msgid "JinjaUtilGUI"
+msgstr "JinjaUtilGUI"
+
+# メニュー翻訳
+msgid "File"
+msgstr "ファイル"
+
+msgid "Open"
+msgstr "開く"
+
+msgid "Export"
+msgstr "エクスポート"
+
+msgid "Close File"
+msgstr "ファイルを閉じる"
+
+msgid "Exit"
+msgstr "終了"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "About"
+msgstr "について"
+
+msgid "About Project"
+msgstr "プロジェクトについて"
+
+msgid "Project Address"
+msgstr "プロジェクトアドレス"
+
+msgid "Documentation"
+msgstr "ドキュメント"
+
+# インターフェーステキスト翻訳
+msgid "Template File"
+msgstr "テンプレートファイル"
+
+msgid "Current File:"
+msgstr "現在のファイル:"
+
+msgid "Select File"
+msgstr "ファイル選択"
+
+msgid "Reload"
+msgstr "再読み込み"
+
+msgid "Variable Data"
+msgstr "変数データ"
+
+msgid "Form Input"
+msgstr "フォーム入力"
+
+msgid "JSON Input"
+msgstr "JSON入力"
+
+msgid "Generate JSON Template"
+msgstr "JSONテンプレート生成"
+
+msgid "Clear JSON"
+msgstr "JSONクリア"
+
+msgid "Generated Result"
+msgstr "生成結果"
+
+msgid "Generate Text"
+msgstr "テキスト生成"
+
+msgid "Clear All"
+msgstr "すべてクリア"
+
+#: main.py:117
+msgid "Select Jinja2 Template File"
+msgstr "Jinja2テンプレートファイルを選択"
+
+#: main.py:120
+msgid "Template Files"
+msgstr "テンプレートファイル"
+
+#: main.py:121
+msgid "All Files"
+msgstr "すべてのファイル"
+
+#: main.py:136
+msgid "Template loaded successfully!"
+msgstr "テンプレートが正常に読み込まれました！"
+
+#: main.py:139
+msgid "Failed to load template: {}"
+msgstr "テンプレートの読み込みに失敗しました: {}"
+
+#: main.py:145
+msgid "Please select a template file first"
+msgstr "まずテンプレートファイルを選択してください"
+
+#: main.py:159
+msgid "No template variables detected"
+msgstr "テンプレート変数が検出されませんでした"
+
+#: main.py:227
+msgid "Success"
+msgstr "成功"
+
+#: main.py:230 main.py:278
+msgid "Warning"
+msgstr "警告"
+
+#: main.py:233 main.py:264 main.py:275 main.py:300 main.py:334
+msgid "Error"
+msgstr "エラー"
+
+#: main.py:261
+msgid "Please select a template file first"
+msgstr "まずテンプレートファイルを選択してください"
+
+#: main.py:272
+msgid "Please enter at least one variable value"
+msgstr "少なくとも1つの変数値を入力してください"
+
+#: main.py:278
+msgid "JSON Error"
+msgstr "JSONエラー"
+
+#: main.py:287
+msgid "Failed to generate text: {}"
+msgstr "テキストの生成に失敗しました: {}"
+
+#: main.py:297
+msgid "No content to save"
+msgstr "保存するコンテンツがありません"
+
+#: main.py:309
+msgid "File saved to: {}"
+msgstr "ファイルが保存されました: {}"
+
+#: main.py:312
+msgid "Failed to save file: {}"
+msgstr "ファイルの保存に失敗しました: {}"
+
+#: main.py:317
+msgid "Confirm"
+msgstr "確認"
+
+#: main.py:317
+msgid "Are you sure you want to clear all content?"
+msgstr "すべてのコンテンツをクリアしてもよろしいですか？"
+
+#: main.py:342
+msgid "No file selected"
+msgstr "ファイルが選択されていません"
+
+#: template_processor.py:30
+msgid "Template rendering error: {}"
+msgstr "テンプレートレンダリングエラー: {}"
+
+#: template_processor.py:54
+msgid "JSON format error: {}"
+msgstr "JSON形式エラー: {}"

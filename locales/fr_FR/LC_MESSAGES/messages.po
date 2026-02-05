@@ -1,0 +1,161 @@
+# French translations for jinjautil.
+# Copyright (C) 2024
+# This file is distributed under the same license as the jinjautil package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jinjautil\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr_FR\n"
+"Language-Team: French\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:12
+msgid "Jinja Template GUI Tool"
+msgstr "Outil GUI pour modèles Jinja"
+
+#: main.py:32
+msgid "Template File"
+msgstr "Fichier de modèle"
+
+#: main.py:40 main.py:41
+msgid "Current File:"
+msgstr "Fichier actuel:"
+
+#: main.py:45
+msgid "Select File"
+msgstr "Sélectionner un fichier"
+
+#: main.py:46
+msgid "Reload"
+msgstr "Recharger"
+
+#: main.py:53
+msgid "Variable Data"
+msgstr "Données des variables"
+
+#: main.py:62
+msgid "Form Input"
+msgstr "Entrée de formulaire"
+
+#: main.py:81
+msgid "JSON Input"
+msgstr "Entrée JSON"
+
+#: main.py:88
+msgid "Generate JSON Template"
+msgstr "Générer un modèle JSON"
+
+#: main.py:89
+msgid "Clear JSON"
+msgstr "Effacer JSON"
+
+#: main.py:98
+msgid "Generated Result"
+msgstr "Résultat généré"
+
+#: main.py:111
+msgid "Generate Text"
+msgstr "Générer du texte"
+
+#: main.py:112
+msgid "Save Result"
+msgstr "Enregistrer le résultat"
+
+#: main.py:113
+msgid "Clear All"
+msgstr "Tout effacer"
+
+#: main.py:117
+msgid "Select Jinja2 Template File"
+msgstr "Sélectionner un fichier de modèle Jinja2"
+
+#: main.py:120
+msgid "Template Files"
+msgstr "Fichiers de modèle"
+
+#: main.py:121
+msgid "All Files"
+msgstr "Tous les fichiers"
+
+#: main.py:136
+msgid "Template loaded successfully!"
+msgstr "Modèle chargé avec succès !"
+
+#: main.py:139
+msgid "Failed to load template: {}"
+msgstr "Échec du chargement du modèle : {}"
+
+#: main.py:145
+msgid "Please select a template file first"
+msgstr "Veuillez d'abord sélectionner un fichier de modèle"
+
+#: main.py:159
+msgid "No template variables detected"
+msgstr "Aucune variable de modèle détectée"
+
+#: main.py:227
+msgid "Success"
+msgstr "Succès"
+
+#: main.py:230 main.py:278
+msgid "Warning"
+msgstr "Avertissement"
+
+#: main.py:233 main.py:264 main.py:275 main.py:300 main.py:334
+msgid "Error"
+msgstr "Erreur"
+
+#: main.py:261
+msgid "Please select a template file first"
+msgstr "Veuillez d'abord sélectionner un fichier de modèle"
+
+#: main.py:272
+msgid "Please enter at least one variable value"
+msgstr "Veuillez entrer au moins une valeur de variable"
+
+#: main.py:278
+msgid "JSON Error"
+msgstr "Erreur JSON"
+
+#: main.py:287
+msgid "Failed to generate text: {}"
+msgstr "Échec de la génération du texte : {}"
+
+#: main.py:297
+msgid "No content to save"
+msgstr "Aucun contenu à enregistrer"
+
+#: main.py:309
+msgid "File saved to: {}"
+msgstr "Fichier enregistré dans : {}"
+
+#: main.py:312
+msgid "Failed to save file: {}"
+msgstr "Échec de l'enregistrement du fichier : {}"
+
+#: main.py:317
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: main.py:317
+msgid "Are you sure you want to clear all content?"
+msgstr "Êtes-vous sûr de vouloir effacer tout le contenu ?"
+
+#: main.py:342
+msgid "No file selected"
+msgstr "Aucun fichier sélectionné"
+
+#: template_processor.py:30
+msgid "Template rendering error: {}"
+msgstr "Erreur de rendu du modèle : {}"
+
+#: template_processor.py:54
+msgid "JSON format error: {}"
+msgstr "Erreur de format JSON : {}"

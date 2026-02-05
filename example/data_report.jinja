@@ -1,0 +1,121 @@
+{# 数据报告模板 #}
+{% set report_title = title | default("数据分析报告") %}
+{% set current_date = date | default("2024-01-01") %}
+{% set company_name = company | default("示例公司") %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ report_title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { text-align: center; border-bottom: 2px solid #333; padding-bottom: 20px; }
+        .section { margin: 30px 0; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .metric-card { background: #f5f5f5; padding: 20px; border-radius: 8px; text-align: center; }
+        .highlight { color: #e74c3c; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .footer { margin-top: 40px; text-align: center; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ report_title }}</h1>
+        <p>生成日期: {{ current_date }}</p>
+        <p>公司: {{ company_name }}</p>
+    </div>
+
+    <div class="section">
+        <h2>📊 核心指标概览</h2>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>总用户数</h3>
+                <p class="highlight">{{ total_users | int | default(0) | format_number }}</p>
+            </div>
+            <div class="metric-card">
+                <h3>活跃用户</h3>
+                <p class="highlight">{{ active_users | int | default(0) | format_number }}</p>
+            </div>
+            <div class="metric-card">
+                <h3>转化率</h3>
+                <p class="highlight">{{ conversion_rate | float | default(0.0) | round(2) }}%</p>
+            </div>
+            <div class="metric-card">
+                <h3>总收入</h3>
+                <p class="highlight">¥{{ revenue | float | default(0.0) | format_currency }}</p>
+            </div>
+        </div>
+    </div>
+
+    {% if show_details %}
+    <div class="section">
+        <h2>📈 详细数据</h2>
+        {% if user_data %}
+        <h3>用户分布</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>地区</th>
+                    <th>用户数</th>
+                    <th>占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for region in user_data %}
+                <tr>
+                    <td>{{ region.name }}</td>
+                    <td>{{ region.count | int | format_number }}</td>
+                    <td>{{ region.percentage | float | round(1) }}%</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+
+        {% if product_data %}
+        <h3>产品销售情况</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>产品名称</th>
+                    <th>销量</th>
+                    <th>单价</th>
+                    <th>总收入</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in product_data %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.sales | int | format_number }}</td>
+                    <td>¥{{ product.price | float | format_currency }}</td>
+                    <td>¥{{ (product.sales * product.price) | float | format_currency }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if recommendations %}
+    <div class="section">
+        <h2>💡 建议与策略</h2>
+        <ul>
+            {% for rec in recommendations %}
+            <li>{{ rec }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        <p>本报告由自动化系统生成</p>
+        <p>如有疑问，请联系数据分析团队</p>
+    </div>
+</body>
+</html>

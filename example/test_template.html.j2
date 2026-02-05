@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>欢迎 {{ name }}!</h1>
+    <p>您的年龄是: {{ age }} 岁</p>
+    <p>邮箱地址: {{ email }}</p>
+    
+    {% if items %}
+    <h2>您的物品清单:</h2>
+    <ul>
+        {% for item in items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+    <p>总计数量: {{ count }}</p>
+    <p>生成时间: {{ date }}</p>
+</body>
+</html>

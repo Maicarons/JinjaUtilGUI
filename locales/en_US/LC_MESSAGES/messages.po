@@ -1,0 +1,177 @@
+# English translations for jinjautil.
+# Copyright (C) 2024
+# This file is distributed under the same license as the jinjautil package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jinjautil\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en_US\n"
+"Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:12
+msgid "JinjaUtilGUI"
+msgstr "JinjaUtilGUI"
+
+# Menu translations
+msgid "File"
+msgstr "File"
+
+msgid "Open"
+msgstr "Open"
+
+msgid "Export"
+msgstr "Export"
+
+msgid "Close File"
+msgstr "Close File"
+
+msgid "Exit"
+msgstr "Exit"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "About"
+msgstr "About"
+
+msgid "About Project"
+msgstr "About Project"
+
+msgid "Project Address"
+msgstr "Project Address"
+
+msgid "Documentation"
+msgstr "Documentation"
+
+# Interface text translations
+msgid "Template File"
+msgstr "Template File"
+
+msgid "Current File:"
+msgstr "Current File:"
+
+msgid "Select File"
+msgstr "Select File"
+
+msgid "Reload"
+msgstr "Reload"
+
+msgid "Variable Data"
+msgstr "Variable Data"
+
+msgid "Form Input"
+msgstr "Form Input"
+
+msgid "JSON Input"
+msgstr "JSON Input"
+
+msgid "Generate JSON Template"
+msgstr "Generate JSON Template"
+
+msgid "Clear JSON"
+msgstr "Clear JSON"
+
+msgid "Generated Result"
+msgstr "Generated Result"
+
+msgid "Generate Text"
+msgstr "Generate Text"
+
+msgid "Clear All"
+msgstr "Clear All"
+
+# System message translations
+msgid "Success"
+msgstr "Success"
+
+msgid "Warning"
+msgstr "Warning"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "JSON Error"
+msgstr "JSON Error"
+
+msgid "Confirm"
+msgstr "Confirm"
+
+msgid "No file selected"
+msgstr "No file selected"
+
+msgid "No template variables detected"
+msgstr "No template variables detected"
+
+msgid "Please select a template file first"
+msgstr "Please select a template file first"
+
+msgid "Please enter at least one variable value"
+msgstr "Please enter at least one variable value"
+
+msgid "No content to save"
+msgstr "No content to save"
+
+msgid "Are you sure you want to clear all content?"
+msgstr "Are you sure you want to clear all content?"
+
+msgid "Are you sure you want to close the current file?"
+msgstr "Are you sure you want to close the current file?"
+
+msgid "Template loaded successfully!"
+msgstr "Template loaded successfully!"
+
+msgid "Failed to load template: {}"
+msgstr "Failed to load template: {}"
+
+msgid "Failed to generate text: {}"
+msgstr "Failed to generate text: {}"
+
+msgid "File saved to: {}"
+msgstr "File saved to: {}"
+
+msgid "Failed to save file: {}"
+msgstr "Failed to save file: {}"
+
+msgid "Failed to open URL: {}"
+msgstr "Failed to open URL: {}"
+
+msgid "Failed to open documentation: {}"
+msgstr "Failed to open documentation: {}"
+
+# Restart related translations
+msgid "Language Changed"
+msgstr "Language Changed"
+
+msgid "Language has been changed to {}. The program needs to restart to apply all changes. Restart now?"
+msgstr "Language has been changed to {}. The program needs to restart to apply all changes. Restart now?"
+
+msgid "Failed to restart program: {}"
+msgstr "Failed to restart program: {}"
+
+# About information translations
+msgid "Version: 1.0"
+msgstr "Version: 1.0"
+
+msgid "A graphical tool for processing Jinja2 templates."
+msgstr "A graphical tool for processing Jinja2 templates."
+
+msgid "Supports multiple languages and real-time preview."
+msgstr "Supports multiple languages and real-time preview."
+
+# File dialog translations
+msgid "Select Jinja2 Template File"
+msgstr "Select Jinja2 Template File"
+
+msgid "Template Files"
+msgstr "Template Files"
+
+msgid "All Files"
+msgstr "All Files"

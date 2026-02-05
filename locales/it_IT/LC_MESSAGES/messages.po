@@ -1,0 +1,161 @@
+# Italian translations for jinjautil.
+# Copyright (C) 2024
+# This file is distributed under the same license as the jinjautil package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jinjautil\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: it_IT\n"
+"Language-Team: Italian\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:12
+msgid "Jinja Template GUI Tool"
+msgstr "Strumento GUI per modelli Jinja"
+
+#: main.py:32
+msgid "Template File"
+msgstr "File modello"
+
+#: main.py:40 main.py:41
+msgid "Current File:"
+msgstr "File corrente:"
+
+#: main.py:45
+msgid "Select File"
+msgstr "Seleziona file"
+
+#: main.py:46
+msgid "Reload"
+msgstr "Ricarica"
+
+#: main.py:53
+msgid "Variable Data"
+msgstr "Dati variabili"
+
+#: main.py:62
+msgid "Form Input"
+msgstr "Input modulo"
+
+#: main.py:81
+msgid "JSON Input"
+msgstr "Input JSON"
+
+#: main.py:88
+msgid "Generate JSON Template"
+msgstr "Genera modello JSON"
+
+#: main.py:89
+msgid "Clear JSON"
+msgstr "Cancella JSON"
+
+#: main.py:98
+msgid "Generated Result"
+msgstr "Risultato generato"
+
+#: main.py:111
+msgid "Generate Text"
+msgstr "Genera testo"
+
+#: main.py:112
+msgid "Save Result"
+msgstr "Salva risultato"
+
+#: main.py:113
+msgid "Clear All"
+msgstr "Cancella tutto"
+
+#: main.py:117
+msgid "Select Jinja2 Template File"
+msgstr "Seleziona file modello Jinja2"
+
+#: main.py:120
+msgid "Template Files"
+msgstr "File modello"
+
+#: main.py:121
+msgid "All Files"
+msgstr "Tutti i file"
+
+#: main.py:136
+msgid "Template loaded successfully!"
+msgstr "Modello caricato con successo!"
+
+#: main.py:139
+msgid "Failed to load template: {}"
+msgstr "Impossibile caricare il modello: {}"
+
+#: main.py:145
+msgid "Please select a template file first"
+msgstr "Seleziona prima un file modello"
+
+#: main.py:159
+msgid "No template variables detected"
+msgstr "Nessuna variabile modello rilevata"
+
+#: main.py:227
+msgid "Success"
+msgstr "Successo"
+
+#: main.py:230 main.py:278
+msgid "Warning"
+msgstr "Avviso"
+
+#: main.py:233 main.py:264 main.py:275 main.py:300 main.py:334
+msgid "Error"
+msgstr "Errore"
+
+#: main.py:261
+msgid "Please select a template file first"
+msgstr "Seleziona prima un file modello"
+
+#: main.py:272
+msgid "Please enter at least one variable value"
+msgstr "Inserisci almeno un valore variabile"
+
+#: main.py:278
+msgid "JSON Error"
+msgstr "Errore JSON"
+
+#: main.py:287
+msgid "Failed to generate text: {}"
+msgstr "Impossibile generare il testo: {}"
+
+#: main.py:297
+msgid "No content to save"
+msgstr "Nessun contenuto da salvare"
+
+#: main.py:309
+msgid "File saved to: {}"
+msgstr "File salvato in: {}"
+
+#: main.py:312
+msgid "Failed to save file: {}"
+msgstr "Impossibile salvare il file: {}"
+
+#: main.py:317
+msgid "Confirm"
+msgstr "Conferma"
+
+#: main.py:317
+msgid "Are you sure you want to clear all content?"
+msgstr "Sei sicuro di voler cancellare tutto il contenuto?"
+
+#: main.py:342
+msgid "No file selected"
+msgstr "Nessun file selezionato"
+
+#: template_processor.py:30
+msgid "Template rendering error: {}"
+msgstr "Errore di rendering del modello: {}"
+
+#: template_processor.py:54
+msgid "JSON format error: {}"
+msgstr "Errore di formato JSON: {}"

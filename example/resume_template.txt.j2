@@ -1,0 +1,16 @@
+姓名: {{ name }}
+年龄: {{ age }}
+职业: {{ job }}
+技能列表:
+{% for skill in skills %}
+- {{ skill }}
+{% endfor %}
+
+工作年限: {{ experience }} 年
+薪资期望: {{ salary }} 元/月
+
+联系方式:
+电话: {{ phone }}
+邮箱: {{ email }}
+
+备注: {{ note }}

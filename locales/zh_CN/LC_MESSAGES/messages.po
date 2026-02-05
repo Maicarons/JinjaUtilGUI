@@ -1,0 +1,178 @@
+# Chinese (Simplified) translations for jinjautil.
+# Copyright (C) 2024
+# This file is distributed under the same license as the jinjautil package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jinjautil\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: Chinese (Simplified)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:12
+msgid "JinjaUtilGUI"
+msgstr "JinjaUtilGUI"
+
+# 菜单翻译
+msgid "File"
+msgstr "文件"
+
+msgid "Open"
+msgstr "打开"
+
+msgid "Export"
+msgstr "导出"
+
+msgid "Close File"
+msgstr "关闭文件"
+
+msgid "Exit"
+msgstr "退出"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "About"
+msgstr "关于"
+
+msgid "About Project"
+msgstr "关于项目"
+
+msgid "Project Address"
+msgstr "项目地址"
+
+msgid "Documentation"
+msgstr "文档"
+
+# 界面文本翻译
+msgid "Template File"
+msgstr "模板文件"
+
+msgid "Current File:"
+msgstr "当前文件:"
+
+msgid "Select File"
+msgstr "选择文件"
+
+msgid "Reload"
+msgstr "重新加载"
+
+msgid "Variable Data"
+msgstr "变量数据"
+
+msgid "Form Input"
+msgstr "表单输入"
+
+msgid "JSON Input"
+msgstr "JSON输入"
+
+msgid "Generate JSON Template"
+msgstr "生成JSON模板"
+
+msgid "Clear JSON"
+msgstr "清空JSON"
+
+msgid "Generated Result"
+msgstr "生成结果"
+
+msgid "Generate Text"
+msgstr "生成文本"
+
+msgid "Clear All"
+msgstr "清空所有"
+
+# 系统消息翻译
+msgid "Success"
+msgstr "成功"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "JSON Error"
+msgstr "JSON错误"
+
+msgid "Confirm"
+msgstr "确认"
+
+msgid "No file selected"
+msgstr "未选择文件"
+
+msgid "No template variables detected"
+msgstr "未检测到模板变量"
+
+msgid "Please select a template file first"
+msgstr "请先选择模板文件"
+
+msgid "Please enter at least one variable value"
+msgstr "请输入至少一个变量值"
+
+msgid "No content to save"
+msgstr "没有可保存的内容"
+
+msgid "Are you sure you want to clear all content?"
+msgstr "确定要清空所有内容吗？"
+
+msgid "Are you sure you want to close the current file?"
+msgstr "确定要关闭当前文件吗？"
+
+msgid "Template loaded successfully!"
+msgstr "模板加载成功！"
+
+msgid "Failed to load template: {}"
+msgstr "加载模板失败: {}"
+
+msgid "Failed to generate text: {}"
+msgstr "生成文本失败: {}"
+
+msgid "File saved to: {}"
+msgstr "文件已保存到: {}"
+
+msgid "Failed to save file: {}"
+msgstr "保存文件失败: {}"
+
+msgid "Failed to open URL: {}"
+msgstr "打开URL失败: {}"
+
+msgid "Failed to open documentation: {}"
+msgstr "打开文档失败: {}"
+
+# 重启相关翻译
+msgid "Language Changed"
+msgstr "语言已更改"
+
+msgid "Language has been changed to {}. The program needs to restart to apply all changes. Restart now?"
+msgstr "语言已更改为{}。程序需要重启以应用所有更改。现在重启吗？"
+
+msgid "Failed to restart program: {}"
+msgstr "重启程序失败: {}"
+
+# 关于信息翻译
+msgid "Version: 1.0"
+msgstr "版本: 1.0"
+
+msgid "A graphical tool for processing Jinja2 templates."
+msgstr "一个用于处理Jinja2模板的图形化工具。"
+
+msgid "Supports multiple languages and real-time preview."
+msgstr "支持多种语言和实时预览。"
+
+# 文件对话框翻译
+msgid "Select Jinja2 Template File"
+msgstr "选择Jinja2模板文件"
+
+msgid "Template Files"
+msgstr "模板文件"
+
+msgid "All Files"
+msgstr "所有文件"
