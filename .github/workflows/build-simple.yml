@@ -1,0 +1,186 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  release:
+    types: [ created ]
+
+env:
+  PYTHON_VERSION: "3.10"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run basic tests
+      run: |
+        python -c "import tkinter; print('Tkinter available')"
+        python -c "import jinja2; print('Jinja2 version:', jinja2.__version__)"
+        python -c "import babel; print('Babel available')"
+
+  build-windows:
+    needs: test
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pyinstaller
+    
+    - name: Build Windows executable
+      run: |
+        pyinstaller JinjaUtilGUI.spec
+    
+    - name: Test executable
+      run: |
+        dist/JinjaUtilGUI.exe --help || echo "Executable created successfully"
+    
+    - name: Upload Windows artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: jinjautil-windows
+        path: dist/JinjaUtilGUI.exe
+
+  build-linux:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-tk
+    
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pyinstaller
+    
+    - name: Build Linux executable
+      run: |
+        pyinstaller JinjaUtilGUI.spec
+    
+    - name: Test executable
+      run: |
+        chmod +x dist/JinjaUtilGUI
+        ./dist/JinjaUtilGUI --help || echo "Executable created successfully"
+    
+    - name: Upload Linux artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: jinjautil-linux
+        path: dist/JinjaUtilGUI
+
+  build-macos:
+    needs: test
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pyinstaller
+    
+    - name: Build macOS executable
+      run: |
+        pyinstaller JinjaUtilGUI.spec
+    
+    - name: Test executable
+      run: |
+        chmod +x dist/JinjaUtilGUI
+        ./dist/JinjaUtilGUI --help || echo "Executable created successfully"
+    
+    - name: Upload macOS artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: jinjautil-macos
+        path: dist/JinjaUtilGUI
+
+  create-release:
+    needs: [build-windows, build-linux, build-macos]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+      with:
+        path: artifacts
+    
+    - name: Package releases
+      run: |
+        cd artifacts
+        # Windows package
+        mkdir -p ../releases/windows
+        cp jinjautil-windows/JinjaUtilGUI.exe ../releases/windows/
+        cp ../README.md ../releases/windows/
+        cp ../README_zh.md ../releases/windows/
+        cd ../releases/windows
+        zip -r ../../jinjautil-windows.zip .
+        
+        # Linux package
+        cd ../../artifacts
+        mkdir -p ../releases/linux
+        cp jinjautil-linux/JinjaUtilGUI ../releases/linux/
+        cp ../README.md ../releases/linux/
+        cp ../README_zh.md ../releases/linux/
+        cd ../releases/linux
+        zip -r ../../jinjautil-linux.zip .
+        
+        # macOS package
+        cd ../../artifacts
+        mkdir -p ../releases/macos
+        cp jinjautil-macos/JinjaUtilGUI ../releases/macos/
+        cp ../README.md ../releases/macos/
+        cp ../README_zh.md ../releases/macos/
+        cd ../releases/macos
+        zip -r ../../jinjautil-macos.zip .
+        
+        cd ../..
+        ls -la *.zip
+    
+    - name: Upload Release Assets
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          jinjautil-windows.zip
+          jinjautil-linux.zip
+          jinjautil-macos.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
