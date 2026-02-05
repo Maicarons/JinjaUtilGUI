@@ -175,3 +175,37 @@ msgstr "Template Files"
 
 msgid "All Files"
 msgstr "All Files"
+
+# New translation entries
+msgid "Export Variables"
+msgstr "Export Variables"
+
+msgid "Export Complete"
+msgstr "Export Complete"
+
+msgid "Export Variables JSON"
+msgstr "Export Variables JSON"
+
+msgid "JSON Files"
+msgstr "JSON Files"
+
+msgid "Variables exported to: {}"
+msgstr "Variables exported to: {}"
+
+msgid "Export failed: {}"
+msgstr "Export failed: {}"
+
+msgid "Please generate result first"
+msgstr "Please generate result first"
+
+msgid "No variables to export"
+msgstr "No variables to export"
+
+msgid "Please fill in variable values first"
+msgstr "Please fill in variable values first"
+
+msgid "Select Export Directory"
+msgstr "Select Export Directory"
+
+msgid "Complete package exported to: {}"
+msgstr "Complete package exported to: {}"

@@ -176,3 +176,37 @@ msgstr "模板文件"
 
 msgid "All Files"
 msgstr "所有文件"
+
+# 新增的翻译条目
+msgid "Export Variables"
+msgstr "导出变量"
+
+msgid "Export Complete"
+msgstr "导出完整包"
+
+msgid "Export Variables JSON"
+msgstr "导出变量JSON"
+
+msgid "JSON Files"
+msgstr "JSON文件"
+
+msgid "Variables exported to: {}"
+msgstr "变量已导出到: {}"
+
+msgid "Export failed: {}"
+msgstr "导出失败: {}"
+
+msgid "Please generate result first"
+msgstr "请先生成结果"
+
+msgid "No variables to export"
+msgstr "没有可导出的变量"
+
+msgid "Please fill in variable values first"
+msgstr "请先填写变量值"
+
+msgid "Select Export Directory"
+msgstr "选择导出目录"
+
+msgid "Complete package exported to: {}"
+msgstr "完整包已导出到: {}"

@@ -159,3 +159,37 @@ msgstr "Vorlagen-Rendering-Fehler: {}"
 #: template_processor.py:54
 msgid "JSON format error: {}"
 msgstr "JSON-Formatfehler: {}"
+
+# Neue Übersetzungseinträge
+msgid "Export Variables"
+msgstr "Variablen exportieren"
+
+msgid "Export Complete"
+msgstr "Vollständiges Paket exportieren"
+
+msgid "Export Variables JSON"
+msgstr "Variablen JSON exportieren"
+
+msgid "JSON Files"
+msgstr "JSON-Dateien"
+
+msgid "Variables exported to: {}"
+msgstr "Variablen exportiert nach: {}"
+
+msgid "Export failed: {}"
+msgstr "Export fehlgeschlagen: {}"
+
+msgid "Please generate result first"
+msgstr "Bitte generieren Sie zuerst das Ergebnis"
+
+msgid "No variables to export"
+msgstr "Keine Variablen zum Exportieren"
+
+msgid "Please fill in variable values first"
+msgstr "Bitte füllen Sie zuerst die Variablenwerte aus"
+
+msgid "Select Export Directory"
+msgstr "Exportverzeichnis auswählen"
+
+msgid "Complete package exported to: {}"
+msgstr "Vollständiges Paket exportiert nach: {}"

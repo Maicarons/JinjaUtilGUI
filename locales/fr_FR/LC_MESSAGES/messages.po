@@ -159,3 +159,37 @@ msgstr "Erreur de rendu du modèle : {}"
 #: template_processor.py:54
 msgid "JSON format error: {}"
 msgstr "Erreur de format JSON : {}"
+
+# Nouvelles entrées de traduction
+msgid "Export Variables"
+msgstr "Exporter les variables"
+
+msgid "Export Complete"
+msgstr "Exporter le paquet complet"
+
+msgid "Export Variables JSON"
+msgstr "Exporter les variables JSON"
+
+msgid "JSON Files"
+msgstr "Fichiers JSON"
+
+msgid "Variables exported to: {}"
+msgstr "Variables exportées vers : {}"
+
+msgid "Export failed: {}"
+msgstr "Échec de l'exportation : {}"
+
+msgid "Please generate result first"
+msgstr "Veuillez d'abord générer le résultat"
+
+msgid "No variables to export"
+msgstr "Aucune variable à exporter"
+
+msgid "Please fill in variable values first"
+msgstr "Veuillez d'abord remplir les valeurs des variables"
+
+msgid "Select Export Directory"
+msgstr "Sélectionner le répertoire d'exportation"
+
+msgid "Complete package exported to: {}"
+msgstr "Paquet complet exporté vers : {}"

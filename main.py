@@ -19,6 +19,7 @@ class JinjaTemplateGUI:
         self.template_vars = {}
         self.current_file = None
         self.processor = TemplateProcessor()
+        self.result_text = None
         
         # 创建菜单栏
         self.create_menu_bar()
@@ -152,13 +153,13 @@ class JinjaTemplateGUI:
         
     def create_file_selection(self, parent):
         # 文件选择框架
-        file_frame = ttk.LabelFrame(parent, text="模板文件", padding="5")
+        file_frame = ttk.LabelFrame(parent, text=_("Template File"), padding="5")
         file_frame.grid(row=0, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=5)
         file_frame.columnconfigure(1, weight=1)
         
         # 文件路径显示
-        ttk.Label(file_frame, text="当前文件:").grid(row=0, column=0, sticky=tk.W, padx=5)
-        self.file_path_var = tk.StringVar(value="未选择文件")
+        ttk.Label(file_frame, text=_("Current File:")).grid(row=0, column=0, sticky=tk.W, padx=5)
+        self.file_path_var = tk.StringVar(value=_("No file selected"))
         file_label = ttk.Label(file_frame, textvariable=self.file_path_var)
         file_label.grid(row=0, column=1, sticky=(tk.W, tk.E), padx=5)
         
@@ -166,8 +167,8 @@ class JinjaTemplateGUI:
         button_frame = ttk.Frame(file_frame)
         button_frame.grid(row=0, column=2, padx=5)
         
-        ttk.Button(button_frame, text="选择文件", command=self.select_file).pack(side=tk.LEFT, padx=2)
-        ttk.Button(button_frame, text="重新加载", command=self.reload_template).pack(side=tk.LEFT, padx=2)
+        ttk.Button(button_frame, text=_("Select File"), command=self.select_file).pack(side=tk.LEFT, padx=2)
+        ttk.Button(button_frame, text=_("Reload"), command=self.reload_template).pack(side=tk.LEFT, padx=2)
         
     def create_data_input(self, parent):
         # 数据输入框架
@@ -209,9 +210,8 @@ class JinjaTemplateGUI:
         
         # JSON输入标签页
         json_frame = ttk.Frame(self.data_notebook)
-        self.data_notebook.add(json_frame, text="JSON输入")
-        json_frame.columnconfigure(0, weight=1)
-        json_frame.rowconfigure(0, weight=1)
+        self.data_notebook.add(json_frame, text=_("JSON Input"))
+        self.configure_frame_grid_weights(json_frame)
         
         # JSON文本框
         self.json_text = scrolledtext.ScrolledText(json_frame, height=15)
@@ -221,22 +221,26 @@ class JinjaTemplateGUI:
         json_button_frame = ttk.Frame(json_frame)
         json_button_frame.grid(row=1, column=0, sticky=(tk.W, tk.E), padx=5, pady=5)
         
-        ttk.Button(json_button_frame, text="生成JSON模板", command=self.generate_json_template).pack(side=tk.LEFT, padx=5)
-        ttk.Button(json_button_frame, text="清空JSON", command=lambda: self.json_text.delete(1.0, tk.END)).pack(side=tk.LEFT, padx=5)
+        ttk.Button(json_button_frame, text=_("Generate JSON Template"), command=self.generate_json_template).pack(side=tk.LEFT, padx=5)
+        ttk.Button(json_button_frame, text=_("Clear JSON"), command=lambda: self.json_text.delete(1.0, tk.END)).pack(side=tk.LEFT, padx=5)
         
         # 绑定JSON文本变化事件
         self.json_text.bind('<KeyRelease>', self.on_json_change)
         
     def create_result_display(self, parent):
         # 结果显示框架
-        result_frame = ttk.LabelFrame(parent, text="生成结果", padding="5")
+        result_frame = ttk.LabelFrame(parent, text=_("Generated Result"), padding="5")
         result_frame.grid(row=4, column=0, columnspan=3, sticky=(tk.W, tk.E, tk.N, tk.S), pady=5)
-        result_frame.columnconfigure(0, weight=1)
-        result_frame.rowconfigure(0, weight=1)
+        self.configure_frame_grid_weights(result_frame)
         
         # 结果文本框
         self.result_text = scrolledtext.ScrolledText(result_frame, height=15)
         self.result_text.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), padx=5, pady=5)
+        
+    def configure_frame_grid_weights(self, frame):
+        """配置框架的网格权重"""
+        frame.columnconfigure(0, weight=1)
+        frame.rowconfigure(0, weight=1)
         
     def create_action_buttons(self, parent):
         # 按钮框架（精简版）
@@ -269,7 +273,7 @@ class JinjaTemplateGUI:
     def export_variables_json(self):
         """导出变量为JSON格式"""
         if not hasattr(self, 'template_vars') or not self.template_vars:
-            messagebox.showwarning("警告", "没有可导出的变量")
+            messagebox.showwarning(_("Warning"), _("No variables to export"))
             return
         
         # 收集变量数据
@@ -282,15 +286,15 @@ class JinjaTemplateGUI:
                 variables_data[var_name] = None
         
         if not any(v is not None for v in variables_data.values()):
-            messagebox.showwarning("警告", "请先填写变量值")
+            messagebox.showwarning(_("Warning"), _("Please fill in variable values first"))
             return
         
         file_path = filedialog.asksaveasfilename(
-            title="导出变量JSON",
+            title=_("Export Variables JSON"),
             defaultextension=".json",
             filetypes=[
-                ("JSON文件", "*.json"),
-                ("所有文件", "*.*")
+                (_("JSON Files"), "*.json"),
+                (_("All Files"), "*.*")
             ]
         )
         
@@ -298,23 +302,23 @@ class JinjaTemplateGUI:
             try:
                 with open(file_path, 'w', encoding='utf-8') as f:
                     json.dump(variables_data, f, ensure_ascii=False, indent=2)
-                messagebox.showinfo("成功", f"变量已导出到: {file_path}")
+                messagebox.showinfo(_("Success"), _("Variables exported to: {}") + file_path)
             except Exception as e:
-                messagebox.showerror("错误", f"导出失败: {str(e)}")
+                messagebox.showerror(_("Error"), _("Export failed: {}") + str(e))
     
     def export_complete_package(self):
         """导出完整包（变量JSON + 生成结果）"""
         result_text = self.result_text.get(1.0, tk.END).strip()
         if not result_text:
-            messagebox.showwarning("警告", "请先生成结果再导出")
+            messagebox.showwarning(_("Warning"), _("Please generate result first"))
             return
         
         if not hasattr(self, 'template_vars') or not self.template_vars:
-            messagebox.showwarning("警告", "没有可导出的变量")
+            messagebox.showwarning(_("Warning"), _("No variables to export"))
             return
         
         # 创建导出目录
-        directory = filedialog.askdirectory(title="选择导出目录")
+        directory = filedialog.askdirectory(title=_("Select Export Directory"))
         if not directory:
             return
         
@@ -354,29 +358,16 @@ class JinjaTemplateGUI:
             with open(readme_file, 'w', encoding='utf-8') as f:
                 f.write(readme_content)
             
-            messagebox.showinfo("成功", f"完整包已导出到: {directory}")
+            messagebox.showinfo(_("Success"), _("Complete package exported to: {}") + directory)
             
         except Exception as e:
-            messagebox.showerror("错误", f"导出失败: {str(e)}")
+            messagebox.showerror(_("Error"), _("Export failed: {}") + str(e))
     
     def close_file(self):
         """关闭当前文件"""
         if self.current_file:
             if messagebox.askyesno(_("Confirm"), _("Are you sure you want to close the current file?")):
-                self.template_content = ""
-                self.current_file = None
-                self.file_path_var.set(_("No file selected"))
-                
-                # 清空变量输入
-                for widget in self.scrollable_frame.winfo_children():
-                    widget.destroy()
-                self.template_vars = {}
-                
-                # 清空JSON输入
-                self.json_text.delete(1.0, tk.END)
-                
-                # 清空结果
-                self.result_text.delete(1.0, tk.END)
+                self.clear_all_content()
     
     def show_about(self):
         """显示关于信息"""
@@ -390,7 +381,7 @@ class JinjaTemplateGUI:
     def open_project_url(self):
         """打开项目地址"""
         try:
-            webbrowser.open("https://github.com/your-username/jinjautil")
+            webbrowser.open("https://github.com/Maicarons/JinjaUtilGUI")
         except Exception as e:
             messagebox.showerror(_("Error"), _("Failed to open URL: {}").format(str(e)))
     
@@ -418,14 +409,14 @@ class JinjaTemplateGUI:
             messagebox.showinfo("成功", "模板加载成功！")
             
         except Exception as e:
-            messagebox.showerror("错误", f"加载模板失败: {str(e)}")
+            messagebox.showerror(_("Error"), _("Failed to load template: {}") + str(e))
     
     def reload_template(self):
         """重新加载当前模板"""
         if self.current_file:
             self.load_template(self.current_file)
         else:
-            messagebox.showwarning("警告", "请先选择模板文件")
+            messagebox.showwarning(_("Warning"), _("Please select a template file first"))
     
     def extract_and_display_variables(self):
         """提取并显示模板变量"""
@@ -598,7 +589,7 @@ class JinjaTemplateGUI:
         if value.startswith('[') and value.endswith(']'):
             try:
                 return json.loads(value)
-            except:
+            except json.JSONDecodeError:
                 pass
         
         # 默认返回字符串
@@ -645,21 +636,25 @@ class JinjaTemplateGUI:
     def clear_all(self):
         """清空所有内容"""
         if messagebox.askyesno(_("Confirm"), _("Are you sure you want to clear all content?")):
-            # 清空模板
-            self.template_content = ""
-            self.current_file = None
-            self.file_path_var.set(_("No file selected"))
-            
-            # 清空变量输入
-            for widget in self.scrollable_frame.winfo_children():
-                widget.destroy()
-            self.template_vars = {}
-            
-            # 清空JSON输入
-            self.json_text.delete(1.0, tk.END)
-            
-            # 清空结果
-            self.result_text.delete(1.0, tk.END)
+            self.clear_all_content()
+    
+    def clear_all_content(self):
+        """清空所有内容的核心逻辑"""
+        # 清空模板
+        self.template_content = ""
+        self.current_file = None
+        self.file_path_var.set(_("No file selected"))
+        
+        # 清空变量输入
+        for widget in self.scrollable_frame.winfo_children():
+            widget.destroy()
+        self.template_vars = {}
+        
+        # 清空JSON输入
+        self.json_text.delete(1.0, tk.END)
+        
+        # 清空结果
+        self.result_text.delete(1.0, tk.END)
 
     def save_result(self):
         """保存结果"""
@@ -685,10 +680,10 @@ class JinjaTemplateGUI:
             except Exception as e:
                 messagebox.showerror("错误", f"保存文件失败: {str(e)}")
     
-    def mark_pending_restart(self):
-        """标记等待重启状态"""
+    @staticmethod
+    def _mark_pending_restart_static():
+        """标记等待重启状态（静态方法）"""
         try:
-            config = {}
             config = {}
             if os.path.exists('config.json'):
                 with open('config.json', 'r', encoding='utf-8') as f:
@@ -699,6 +694,10 @@ class JinjaTemplateGUI:
                 json.dump(config, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"Failed to mark pending restart: {e}")
+    
+    def mark_pending_restart(self):
+        """标记等待重启状态"""
+        self._mark_pending_restart_static()
     
     def save_current_state(self):
         """保存当前状态"""

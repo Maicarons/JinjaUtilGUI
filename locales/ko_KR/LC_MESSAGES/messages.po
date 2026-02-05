@@ -159,3 +159,37 @@ msgstr "템플릿 렌더링 오류: {}"
 #: template_processor.py:54
 msgid "JSON format error: {}"
 msgstr "JSON 형식 오류: {}"
+
+# 새로운 번역 항목
+msgid "Export Variables"
+msgstr "변수 내보내기"
+
+msgid "Export Complete"
+msgstr "완전 패키지 내보내기"
+
+msgid "Export Variables JSON"
+msgstr "변수 JSON 내보내기"
+
+msgid "JSON Files"
+msgstr "JSON 파일"
+
+msgid "Variables exported to: {}"
+msgstr "변수가 내보내짐: {}"
+
+msgid "Export failed: {}"
+msgstr "내보내기 실패: {}"
+
+msgid "Please generate result first"
+msgstr "먼저 결과를 생성하세요"
+
+msgid "No variables to export"
+msgstr "내보낼 변수가 없습니다"
+
+msgid "Please fill in variable values first"
+msgstr "먼저 변수 값을 입력하세요"
+
+msgid "Select Export Directory"
+msgstr "내보내기 디렉토리 선택"
+
+msgid "Complete package exported to: {}"
+msgstr "완전 패키지가 내보내짐: {}"

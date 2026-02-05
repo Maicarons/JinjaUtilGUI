@@ -182,3 +182,5 @@ $RECYCLE.BIN/
 .swp
 
 releases/
+
+.idea/

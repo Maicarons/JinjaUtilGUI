@@ -175,3 +175,37 @@ msgstr "テンプレートレンダリングエラー: {}"
 #: template_processor.py:54
 msgid "JSON format error: {}"
 msgstr "JSON形式エラー: {}"
+
+# 新しい翻訳エントリ
+msgid "Export Variables"
+msgstr "変数をエクスポート"
+
+msgid "Export Complete"
+msgstr "完全パッケージをエクスポート"
+
+msgid "Export Variables JSON"
+msgstr "変数JSONをエクスポート"
+
+msgid "JSON Files"
+msgstr "JSONファイル"
+
+msgid "Variables exported to: {}"
+msgstr "変数がエクスポートされました: {}"
+
+msgid "Export failed: {}"
+msgstr "エクスポートに失敗しました: {}"
+
+msgid "Please generate result first"
+msgstr "まず結果を生成してください"
+
+msgid "No variables to export"
+msgstr "エクスポートする変数がありません"
+
+msgid "Please fill in variable values first"
+msgstr "まず変数値を入力してください"
+
+msgid "Select Export Directory"
+msgstr "エクスポートディレクトリを選択"
+
+msgid "Complete package exported to: {}"
+msgstr "完全パッケージがエクスポートされました: {}"
